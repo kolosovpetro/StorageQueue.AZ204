@@ -3,15 +3,15 @@ using System.Threading.Tasks;
 using Azure.Storage.Queues;
 using StorageQueue.AZ204.DTO;
 
-namespace StorageQueue.AZ204.Sender;
+namespace StorageQueue.AZ204.Consumer;
 
-public class StorageQueueSender : IStorageQueueSender
+public class QueueStorageConsumer : IQueueStorageConsumer
 {
     private const string QueueName = "pkolosov-storage-queue";
     private const string EnvironmentKey = "AZURE_STORAGE_ACCOUNT";
     private readonly QueueClient _queueClient;
 
-    public StorageQueueSender()
+    public QueueStorageConsumer()
     {
         var connectionString = Environment.GetEnvironmentVariable(EnvironmentKey) ??
                                throw new InvalidOperationException(
@@ -26,23 +26,23 @@ public class StorageQueueSender : IStorageQueueSender
         _queueClient.CreateIfNotExists();
     }
 
-    public async Task<SendMessageResponse> SendMessageAsync(string message)
-    {
-        var exists = await _queueClient.ExistsAsync();
 
-        if (!exists.Value)
+    public async Task<ReadMessageResult> ReadMessageAsync()
+    {
+        var result = await _queueClient.ReceiveMessageAsync();
+
+        if (result.Value == null)
         {
-            return new SendMessageResponse(string.Empty, PopReceipt: string.Empty, Success: false, StatusCode: 400);
+            return null;
         }
 
-        var response = await _queueClient.SendMessageAsync(message);
+        var response = new ReadMessageResult(
+            result.Value.MessageId,
+            result.Value.MessageText,
+            result.Value.InsertedOn.ToString(),
+            result.Value.ExpiresOn.ToString(),
+            result.Value.DequeueCount);
 
-        var result = new SendMessageResponse(
-            response.Value.MessageId,
-            response.Value.PopReceipt,
-            Success: true,
-            StatusCode: 200);
-
-        return result;
+        return response;
     }
 }
