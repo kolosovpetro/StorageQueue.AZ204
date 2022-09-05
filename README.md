@@ -1,5 +1,7 @@
 # Storage Queue Demo
 
+[![Run Build and Test](https://github.com/kolosovpetro/StorageQueue.AZ204/actions/workflows/run-build-and-test-dotnet.yml/badge.svg)](https://github.com/kolosovpetro/StorageQueue.AZ204/actions/workflows/run-build-and-test-dotnet.yml)
+
 This project is done in scope of my preparation to the AZ-204 exam, its main aim is to collect most
 important info in terms of azure storage queues and express it as simple as possible.
 
@@ -36,7 +38,8 @@ To install: `dotnet add package Azure.Storage.Queues`
 Both apps, consumer and sender must have azure storage account connection string of the following format
 
 - `DefaultEndpointsProtocol=https;AccountName=pkolosovstorage;AccountKey=;EndpointSuffix=core.windows.net`
-- Set it as environment variable using powershell: `$env:AZURE_STORAGE_ACCOUT = 'DefaultEndpointsProtocol=https;AccountName=pkolosovstorage;AccountKey=;EndpointSuffix=core.windows.net'`
+- Set it as environment variable using
+  powershell: `$env:AZURE_STORAGE_ACCOUT = 'DefaultEndpointsProtocol=https;AccountName=pkolosovstorage;AccountKey=;EndpointSuffix=core.windows.net'`
 
 It could be checked at azure portal at: `storage accout -> access keys` as per screenshot below
 
