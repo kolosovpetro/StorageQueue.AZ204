@@ -1,6 +1,7 @@
 # Storage Queue Demo
 
-This project is done in scope of my preparation to the AZ-204 exam, its main aim is to collect the most imprtant info in terms of azure storage queues and express it as simple as possible.
+This project is done in scope of my preparation to the AZ-204 exam, its main aim is to collect most
+important info in terms of azure storage queues and express it as simple as possible.
 
 ## Project structure
 
@@ -22,7 +23,7 @@ Let's perform it using azure CLI following the commands
 - `az storage account create --name "pkolosovstorage" --resource-group "storage-queue-demo-rg"`
 - `az storage queue create --name "pkolosov-storage-queue" --account-name "pkolosovstorage"`
 
-So the infrastucture is utilized.
+So the infrastructure is utilized.
 
 ## Required Nuget packages
 
@@ -30,8 +31,15 @@ So the infrastucture is utilized.
 
 To install: `dotnet add package Azure.Storage.Queues`
 
-## Settings 
+## Settings
 
 Both apps, consumer and sender must have azure storage account connection string of the following format
 
 - `DefaultEndpointsProtocol=https;AccountName=pkolosovstorage;AccountKey=;EndpointSuffix=core.windows.net`
+- Set it as environment variable using powershell: `$env:AZURE_STORAGE_ACCOUT = 'DefaultEndpointsProtocol=https;AccountName=pkolosovstorage;AccountKey=;EndpointSuffix=core.windows.net'`
+
+It could be checked at azure portal at: `storage accout -> access keys` as per screenshot below
+
+<p align="center">
+  <img src="img/StorageAccountConnectionString.PNG" height="400"  alt="Mango Messenger Logo"/>
+</p>

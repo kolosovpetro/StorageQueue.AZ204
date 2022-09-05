@@ -2,12 +2,15 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Azure.Storage.Queues" Version="12.11.1" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\StorageQueue.AZ204.DTO\StorageQueue.AZ204.DTO.csproj" />
     </ItemGroup>
 
 </Project>
