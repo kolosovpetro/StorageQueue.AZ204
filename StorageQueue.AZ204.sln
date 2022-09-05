@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageQueue.AZ204.Sender", "StorageQueue.AZ204.Sender\StorageQueue.AZ204.Sender.csproj", "{ADAEB36B-8F3E-4BBD-BC70-AF9FA7AB85C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageQueue.AZ204.Consumer", "StorageQueue.AZ204.Consumer\StorageQueue.AZ204.Consumer.csproj", "{6234FB87-B491-444C-B81B-FB4B5078C513}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{1726E9F9-A738-4B2D-BCD4-D976860AED7C}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		.gitattributes = .gitattributes
+		LICENSE.txt = LICENSE.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{A8EA999A-BFBC-4E0A-8F66-40561FE78A8E}"
+	ProjectSection(SolutionItems) = preProject
+		img\StorageAccountConnectionString.PNG = img\StorageAccountConnectionString.PNG
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADAEB36B-8F3E-4BBD-BC70-AF9FA7AB85C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADAEB36B-8F3E-4BBD-BC70-AF9FA7AB85C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADAEB36B-8F3E-4BBD-BC70-AF9FA7AB85C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADAEB36B-8F3E-4BBD-BC70-AF9FA7AB85C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6234FB87-B491-444C-B81B-FB4B5078C513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6234FB87-B491-444C-B81B-FB4B5078C513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6234FB87-B491-444C-B81B-FB4B5078C513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6234FB87-B491-444C-B81B-FB4B5078C513}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
